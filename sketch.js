@@ -1,5 +1,5 @@
 function setup() {
-  not valid code;
+ // Yes
 }
 
 function draw() {
