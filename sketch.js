@@ -28,7 +28,15 @@ function draw() {
  //fish
  strokeWeight(0)
  fill(255,195,95)
- ellipse(mouseX,mouseY,70,60)
+ ellipse(mouseX,mouseY,90,75)
  //top fin
- triangle(mouseX-50,mouseY-80,mouseX+35,mouseY,mouseX-20,mouseY)
+ triangle(mouseX-50,mouseY-90,mouseX+35,mouseY,mouseX-20,mouseY)
+ //bottom fins
+ triangle(mouseX,mouseY+20,mouseX+50,mouseY,mouseX-20,mouseY+70)
+ triangle(mouseX-20,mouseY+20,mouseX+30,mouseY,mouseX-40,mouseY+70)
+ //tail
+ triangle(mouseX-60,mouseY-50,mouseX-60,mouseY+50,mouseX,mouseY)
+ //eye
+ fill(0)
+ ellipse(mouseX+20,mouseY-10,10,10)
 }
