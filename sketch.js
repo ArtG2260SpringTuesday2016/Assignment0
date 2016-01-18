@@ -7,6 +7,9 @@ function setup() {
 }
 
 function draw() {
+  //circle
+  ellipse(20,20,20,20)
+  ellipse(30,30,30,30)
   
   //rectangle
   fill(1);
