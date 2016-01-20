@@ -3,6 +3,7 @@ function setup() {
   background(10,200,50,80)
 }
 
+//
 function draw() {
  //sky
   fill(100,230,400)
