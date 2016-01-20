@@ -5,11 +5,7 @@ createCanvas(500, 500);
 // Move the mouse across the page
 // to change its value
 
-var value = 0;
-function draw() {
-  fill(value);
-  rect(95, 25, 350, 300);
-}
+
 function mouseMoved() {
   value = value + 9;
   if (value > 500) {
@@ -24,7 +20,7 @@ var value = 0;
 function draw() {
   fill(value);
   stroke('red')
-  rect(25, 25, 350, 350);
+  rect(mouseX, 25, 350, 350);
 }
 function mouseClicked() {
   if (value == 0) {
