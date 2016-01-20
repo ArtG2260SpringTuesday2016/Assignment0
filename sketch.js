@@ -8,22 +8,22 @@ function setup() {
 }
 
 function draw() {
-  //circle
+  //black circles
   ellipse(400,300,150,150)
   ellipse(80,60,130,130)
   
-  //moving circle
+  //moving circle along X axis
   fill(1);
   noStroke(255);
   rect(rectX, mouseY, Y, Y, 20);
   rectX = rectX + 1.5
   if (rectX > 600){
     rectX = 0;
-  if (isntChanged) {background(0,0,155)
+  if (isntChanged) {background(200,0,155)
   }
   }}
 function mousePressed(){
-  //newbackground
+  //new pink background
   background(255,0,255);
   isntChanged = false;
 }
