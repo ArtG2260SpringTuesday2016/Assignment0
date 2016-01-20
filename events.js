@@ -20,12 +20,13 @@ var value = 0;
 function draw() {
   fill(value);
   stroke('red')
-  rect(mouseX, 25, 350, 350);
+  rect(mouseX, mouseY, 350, 350);
 }
 function mouseClicked() {
   if (value == 0) {
     value = 500;
   } else {
     value = 0;
+    
   }
 }
