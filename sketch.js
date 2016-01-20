@@ -1,5 +1,5 @@
 var rectX = 0;
-var Y = 55;
+var Y = 35;
 
 function setup() {
   createCanvas(600, 400);
@@ -8,17 +8,17 @@ function setup() {
 
 function draw() {
   //circle
-  ellipse(20,20,20,20)
-  ellipse(30,30,30,30)
+  ellipse(400,300,150,150)
+  ellipse(80,60,130,130)
   
-  //rectangle
+  //moving circle
   fill(1);
   noStroke(255);
   rect(rectX, mouseY, Y, Y, 20);
-  rectX = rectX + 3
+  rectX = rectX + 1.5
   
   }
 function mousePressed(){
   //newbackground
-  background(20,255,200);
+  background(255,0,255);
 }
