@@ -1,103 +1,103 @@
 var planet = {
   sun: 300,
   sunX: 600,
-  sunY: 350,
+  sunY: 450,
   mercury:40,
   mercuryX:770,
-  mercuryY:320,
+  mercuryY:420,
   venus:60,
   venusX:790,
-  venusY:200,
+  venusY:300,
   earth:100,
   earthX:375,
-  earthY:175,
+  earthY:275,
   mars:91,
   marsX:900,
-  marsY:600
+  marsY:700
 };
 
 function setup() {
-  createCanvas(1200, 700);
+  createCanvas(1200, 900);
 }
 
 function draw() {
 background(30,30,30);
 
-if (mouseX < 788 && mouseY < 338 && mouseX && mouseX > 752 && mouseY > 302 ){
+if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
   textSize(25);
   fill(255,255,255);
-  text("Mercury", 778, 360);
+  text("Mercury", 778, 460);
   textSize(15);
-  text("Mass: 3.285 × 10^23 kg", 778, 380);
+  text("Mass: 3.285 × 10^23 kg", 778, 480);
   noFill();
   strokeWeight(0);
-  ellipse(600,350,485,485);
-  ellipse(600,350,580,580);
-  ellipse(600,350,785,785);
+  ellipse(600,450,485,485);
+  ellipse(600,450,580,580);
+  ellipse(600,450,785,785);
   stroke(245, 184, 137);
   strokeWeight(1);
-  ellipse(600,350,348,348);
-}else if (mouseX < 817 && mouseY < 227 && mouseX && mouseX > 763 && mouseY > 173){
+  ellipse(600,450,348,348);
+}else if (mouseX < 817 && mouseY < 327 && mouseX && mouseX > 763 && mouseY > 273){
   textSize(25);
   fill(255,255,255);
-  text("Venus", 820, 200);
+  text("Venus", 820, 300);
   textSize(15);
-  text("Mass: 4.867 × 10^24 kg", 820, 220);
+  text("Mass: 4.867 × 10^24 kg", 820, 320);
   noFill();
   strokeWeight(0);
-  ellipse(600,350,348,348);
-  ellipse(600,350,580,580);
-  ellipse(600,350,785,785);
+  ellipse(600,450,348,348);
+  ellipse(600,450,580,580);
+  ellipse(600,450,785,785);
   stroke(245, 184, 137);
   strokeWeight(2);
-  ellipse(600,350,485,485);
-}else if (mouseX < 415 && mouseY < 215 && mouseX && mouseX > 335 && mouseY > 135){
+  ellipse(600,450,485,485);
+}else if (mouseX < 415 && mouseY < 315 && mouseX && mouseX > 335 && mouseY > 235){
   textSize(25);
   fill(255,255,255);
-  text("Earth", 260, 170);
+  text("Earth", 260, 270);
   textSize(18);
-  text("Mass: 5.972 × 10^24 kg", 130, 195);
+  text("Mass: 5.972 × 10^24 kg", 130, 295);
   noFill();
   strokeWeight(0);
-  ellipse(600,350,348,348);
-  ellipse(600,350,485,485);
-  ellipse(600,350,785,785);
+  ellipse(600,450,348,348);
+  ellipse(600,450,485,485);
+  ellipse(600,450,785,785);
   stroke(129, 191, 253);
   strokeWeight(3);
-  ellipse(600,350,580,580);
-}else if (mouseX < 940 && mouseY < 640 && mouseX && mouseX > 860 && mouseY > 560){
+  ellipse(600,450,580,580);
+}else if (mouseX < 940 && mouseY < 740 && mouseX && mouseX > 860 && mouseY > 660){
   textSize(25);
   fill(255,255,255);
-  text("Mars", 945, 600);
+  text("Mars", 945, 700);
   textSize(15);
-  text("Mass: 6.39 × 10^23 kg", 945, 620);
+  text("Mass: 6.39 × 10^23 kg", 945, 720);
   noFill();
   strokeWeight(0);
-  ellipse(600,350,348,348);
-  ellipse(600,350,485,485);
-  ellipse(600,350,580,580);
+  ellipse(600,450,348,348);
+  ellipse(600,450,485,485);
+  ellipse(600,450,580,580);
   stroke(195, 81, 81);
   strokeWeight(4);
-  ellipse(600,350,785,785);
+  ellipse(600,450,785,785);
 }else{
   noFill();
   stroke(210,128,64);
   strokeWeight(1);
-  ellipse(600,350,348,348);
+  ellipse(600,450,348,348);
   stroke(245, 184, 137);
   strokeWeight(2);
-  ellipse(600,350,485,485);
+  ellipse(600,450,485,485);
   stroke(129, 191, 253);
   strokeWeight(3);
-  ellipse(600,350,580,580);
+  ellipse(600,450,580,580);
   noFill();
   stroke(195, 81, 81);
   strokeWeight(4);
-  ellipse(600,350,785,785);
-  textSize(45);
+  ellipse(600,450,785,785);
+  textSize(35);
   fill(255,255,255);
   noStroke();
-  text("Hover To Learn More About The Solar System", 150, 50);
+  text("Hover To Learn More About The Solar System", 250, 40);
   }
 
 //Sun
@@ -292,12 +292,12 @@ if (mouseX < 788 && mouseY < 338 && mouseX && mouseX > 752 && mouseY > 302 ){
 
 //Sun Text
 
-if (mouseX < 700 && mouseY < 450 && mouseX && mouseX > 500 && mouseY > 250 ){
+if (mouseX < 700 && mouseY < 550 && mouseX && mouseX > 500 && mouseY > 350 ){
   textSize(45);
   fill(255,255,255);
-  text("Sun", 560, 340);
+  text("Sun", 560, 440);
   textSize(20);
-  text("Mass: 1.989 × 10^30 kg", 495, 375);  
+  text("Mass: 1.989 × 10^30 kg", 495, 475);  
 }
 
 }
