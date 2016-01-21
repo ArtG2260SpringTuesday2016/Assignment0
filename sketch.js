@@ -1,27 +1,36 @@
-var N = 150;
-
+var triPoint= 50;
 
 function setup() {
   createCanvas(600,600)
   //background
-  background(240,222,210)
- //rect
- noFill()
- rect(100, N, 400, 400)
+  background(72, 61, 139)
+
 }
 
 function draw() {
   //ellipse
   fill(51)
-  ellipse(mouseX,mouseY,60,50)
+  ellipse(mouseX,mouseY,60,60)
   noStroke()
+  
+  //mouseIsPressed
+  if (mouseIsPressed)
+    //rect
+  rect(mouseX - 25 , mouseY + 50, 50, 100);
+  else
+    //tri
+  triangle(50, 50, 550, 50, 300, 400);
+  
 }
+
+
 function mousePressed(){
+  //background
   background(240,222,210)
-  //rect
-  fill('rgb(0,255,0)')
-  rect(150, N, 400, 400)
-  N = N + 5
+  fill(0, 126, 255)
+  
   //tri
-  triangle(50, 50, 550, 50, 300, 400)
+  triangle(triPoint, triPoint, 550, 50, 300, 400)
+  triPoint = triPoint +80
+  
 }
