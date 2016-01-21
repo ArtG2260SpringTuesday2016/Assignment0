@@ -1,29 +1,33 @@
 
 
 function setup() {
-  createCanvas(1024, 500)
+  createCanvas(800, 500)
   background(0, 0, 0)
   }
   
 
 function draw() {
   
+  //This Variable is used to convert the width of the canvas into a multiple of 256
+  
+  var colconvert = (width / 256) ;
+  
   //This Variable will be used to initially change the background to white
   
-  var dawn = (mouseX / 4);
+  var dawn = (mouseX / colconvert) ;
   
   // This Variable will be used to make the background return to black
-  var dusk = ((1024 - mouseX) / 4);
+  var dusk = ((width - mouseX) / 4);
   
   // This Variable creates the Y arc for the ellipse
-  var cycle = sin(PI * mouseX / 1024) * -500 + 500
+  var cycle = sin(PI * mouseX / width) * -height + height
   
   /* Changes the color of the background depending on mouse x position
      Will go towards white as the mouse approaches the center of the screen
      and black as the x approaches 0 or 1000 from the center of 500
    */
 
-  if (mouseX <= 512) {
+  if (mouseX <= (width / 2)) {
       background(dawn, dawn, dawn)
   } else {
        background(dusk, dusk, dusk)  }
