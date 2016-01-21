@@ -1,7 +1,7 @@
 
 
 function setup() {
-  createCanvas(800, 500)
+  createCanvas(1200, 600)
   background(0, 0, 0)
   }
   
@@ -17,10 +17,18 @@ function draw() {
   var dawn = (mouseX / colconvert) ;
   
   // This Variable will be used to make the background return to black
-  var dusk = ((width - mouseX) / 4);
   
-  // This Variable creates the Y arc for the ellipse
-  var cycle = sin(PI * mouseX / width) * -height + height
+  var dusk = ((width - mouseX) / colconvert);
+  
+  //This Variable converts the distance percentage wise the mouseX is across the screen
+  //and converts it into a multiple of pi for later use
+ 
+  var piconvert = PI * mouseX / width ;
+  
+  // This Variable creates the Y arc for the ellipse using the variable piconvert 
+  // and the height of the canvas
+ 
+  var cycle = sin(piconvert) * -height + height ;
   
   /* Changes the color of the background depending on mouse x position
      Will go towards white as the mouse approaches the center of the screen
@@ -32,6 +40,8 @@ function draw() {
   } else {
        background(dusk, dusk, dusk)  }
        
+  //The stroke, strokeweight, and ellipse create the circle that should move across the screen
+  
   stroke("orange")
   strokeWeight(15)
    
