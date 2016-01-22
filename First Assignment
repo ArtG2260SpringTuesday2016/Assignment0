@@ -61,5 +61,8 @@ function draw() {
   textAlign(LEFT);
   text("CAT",midwidth - 10, midlength + 190, 100,100);
   
+  //interactive areas:
+  fill(250,200,200);
+  ellipse(mouseX,mouseY,100,100);
   
 }
