@@ -2,67 +2,68 @@ function setup() {
   
   //background
   createCanvas(500,500);
-  background('#fae');
+  background(51);
   
 }
 
 function draw() {
   //general stuff:
-  var midwidth = 250;
-  var midlength = 250;
+  var midWidth = width/2;
+  var midLength = height/2;
   
   //basic image
   
   //black parts
   fill(51);
-  ellipse(midwidth,midlength - 10,150,100);//head
-  ellipse(midwidth,midlength + 80,130,120);//body
+  ellipse(midWidth,midLength - 10,150,100);//head
+  ellipse(midWidth,midLength + 80,130,120);//body
  
   //white parts
   strokeWeight(0);
   fill(255,255,255);
-  ellipse(midwidth,midlength,100,70);//head
-  ellipse(midwidth,midlength + 80,80,110);//body
+  ellipse(midWidth,midLength,100,70);//head
+  ellipse(midWidth,midLength + 80,80,110);//body
   
   //details
   
   //eyes:
   fill(51);
-  ellipse(midwidth - 20,midlength,9,18);//left eye
-  ellipse(midwidth + 20,midlength,9,18);//right eye
+  ellipse(midWidth - 20,midLength,9,18);//left eye
+  ellipse(midWidth + 20,midLength,9,18);//right eye
   
   //beak
   fill(255,204,0);
-  arc(midwidth,midlength + 10,midwidth - 210, midlength - 210,0,PI);
+  arc(midWidth,midLength + 10,midWidth - 210, midLength - 210,0,PI);
   
   //wings
   fill(51);
-  arc(midwidth - 60,midlength + 73,midwidth - 160, midlength - 150,2*PI/3,5*PI/3);//left wing
-  arc(midwidth + 60,midlength + 73,midwidth - 160, midlength - 150,4*PI/3,PI/3);//right wing
+  arc(midWidth - 60,midLength + 73,midWidth - 160, midLength - 150,2*PI/3,5*PI/3);//left wing
+  arc(midWidth + 60,midLength + 73,midWidth - 160, midLength - 150,4*PI/3,PI/3);//right wing
   
   //feet
   fill(255,204,0);
-  arc(midwidth - 30,midlength + 150,midwidth - 200, midlength - 200,PI,0);//left foot
-  arc(midwidth + 30,midlength + 150,midwidth - 200, midlength - 200,PI,0);//right foot
+  arc(midWidth - 30,midLength + 150,midWidth - 200, midLength - 200,PI,0);//left foot
+  arc(midWidth + 30,midLength + 150,midWidth - 200, midLength - 200,PI,0);//right foot
   
   //text
   fill(300,20,0);
   textSize(40);
   textAlign(RIGHT);
-  text("FUNNY",midwidth + 30,midlength - 200,100,100);
+  text("FUNNY",midWidth + 30,midLength - 200,100,100);
   
-  fill('rgb(0,255,0)');
+  fill('rgb(0,90,0)');
   textSize(55);
   textAlign(CENTER);
-  text("LOOKING",midwidth + 35, midlength - 150, 100,100);
+  text("LOOKING",midWidth + 35, midLength - 150, 100,100);
   
   fill(255,203,50);
   textSize(65);
   textAlign(LEFT);
-  text("CAT",midwidth - 10, midlength + 190, 100,100);
+  text("CAT",midWidth - 10, midLength + 190, 100,100);
   
   //interactive areas:
   fill(250,200,200);
   ellipse(mouseX,mouseY,100,100);
+  
   
 }
