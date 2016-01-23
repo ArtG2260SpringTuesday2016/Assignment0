@@ -1,20 +1,52 @@
-var planet = {
-  sun: 300,
-  sunX: 600,
-  sunY: 450,
-  mercury:40,
-  mercuryX:770,
-  mercuryY:420,
-  venus:60,
-  venusX:790,
-  venusY:300,
-  earth:100,
-  earthX:375,
-  earthY:275,
-  mars:91,
-  marsX:900,
-  marsY:700
-};
+var sun = {
+  name: "Sun",
+  size: 300,
+  x: 600,
+  y: 450,
+  colorR: 222,
+  colorG: 192,
+  colorB: 0
+}
+
+var mercury = {
+  name: "Mercury",
+  size: 40,
+  x: 770,
+  y: 420,
+  colorR: 210,
+  colorG: 128,
+  colorB: 64
+}
+
+var venus = {
+  name: "Venus",
+  size: 60,
+  x: 790,
+  y: 300,
+  colorR: 200,
+  colorG: 87,
+  colorB: 0
+}
+
+var earth = {
+  name: "Earth",
+  size: 100 ,
+  x: 375,
+  y: 275,
+  colorR: 3,
+  colorG: 100,
+  colorB: 175
+}
+
+var mars = {
+  name: "Mars",
+  size: 91,
+  x: 900,
+  y: 700,
+  colorR: 127,
+  colorG: 0,
+  colorB: 0
+}
 
 function setup() {
   createCanvas(1200, 900);
@@ -22,8 +54,8 @@ function setup() {
 
 function draw() {
 background(30,30,30);
-
-if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
+//Mercury Hover Orbit
+if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.size){
   textSize(25);
   fill(255,255,255);
   text("Mercury", 778, 460);
@@ -37,7 +69,9 @@ if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
   stroke(245, 184, 137);
   strokeWeight(1);
   ellipse(600,450,348,348);
-}else if (mouseX < 817 && mouseY < 327 && mouseX && mouseX > 763 && mouseY > 273){
+  
+//Venus Hover Orbit
+} else if (dist(mouseX, venus.x) < venus.size && dist(mouseY, venus.y) < venus.size){
   textSize(25);
   fill(255,255,255);
   text("Venus", 820, 300);
@@ -51,6 +85,8 @@ if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
   stroke(245, 184, 137);
   strokeWeight(2);
   ellipse(600,450,485,485);
+  
+//Earth Hover Orbit
 }else if (mouseX < 415 && mouseY < 315 && mouseX && mouseX > 335 && mouseY > 235){
   textSize(25);
   fill(255,255,255);
@@ -65,6 +101,8 @@ if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
   stroke(129, 191, 253);
   strokeWeight(3);
   ellipse(600,450,580,580);
+  
+// Mars Hover Orbit
 }else if (mouseX < 940 && mouseY < 740 && mouseX && mouseX > 860 && mouseY > 660){
   textSize(25);
   fill(255,255,255);
@@ -79,6 +117,8 @@ if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
   stroke(195, 81, 81);
   strokeWeight(4);
   ellipse(600,450,785,785);
+  
+//When No Hover
 }else{
   noFill();
   stroke(210,128,64);
@@ -104,193 +144,193 @@ if (mouseX < 788 && mouseY < 438 && mouseX && mouseX > 752 && mouseY > 402 ){
 
   fill (222,192,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-20, planet.sun-20);
+  ellipse(sun.x, sun.y, sun.size-20, sun.size-20);
 
   fill (226,196,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-40, planet.sun-40);
+  ellipse(sun.x, sun.y, sun.size-40, sun.size-40);
   
   fill (230,200,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-60, planet.sun-60);
+  ellipse(sun.x, sun.y, sun.size-60, sun.size-60);
   
   fill (234,204,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-80, planet.sun-80);
+  ellipse(sun.x, sun.y, sun.size-80, sun.size-80);
   
   fill (238,208,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-100, planet.sun-100);
+  ellipse(sun.x, sun.y, sun.size-100, sun.size-100);
   
   fill (242,212,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-120, planet.sun-120);
+  ellipse(sun.x, sun.y, sun.size-120, sun.size-120);
   
   fill (246,216,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-140, planet.sun-140);
+  ellipse(sun.x, sun.y, sun.size-140, sun.size-140);
   
   fill (250,220,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-160, planet.sun-160);
+  ellipse(sun.x, sun.y, sun.size-160, sun.size-160);
   
   fill (255,222,0);
   strokeWeight(0);
-  ellipse(planet.sunX, planet.sunY, planet.sun-180, planet.sun-180);
+  ellipse(sun.x, sun.y, sun.size-180, sun.size-180);
 
 //Mercury
 
   fill (210,128,64);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-3, planet.mercury-3);
+  ellipse(mercury.x, mercury.y, mercury.size-3, mercury.size-3);
   
   fill (212,126,56);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-6, planet.mercury-6);
+  ellipse(mercury.x, mercury.y, mercury.size-6, mercury.size-6);
   
   fill (214,125,53);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-9, planet.mercury-9);
+  ellipse(mercury.x, mercury.y, mercury.size-9, mercury.size-9);
   
   fill (216,124,49);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-12, planet.mercury-12);
+  ellipse(mercury.x, mercury.y, mercury.size-12, mercury.size-12);
   
   fill (218,123,46);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-15, planet.mercury-15);
+  ellipse(mercury.x, mercury.y, mercury.size-15, mercury.size-15);
   
   fill (221,122,43);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-18, planet.mercury-18);
+  ellipse(mercury.x, mercury.y, mercury.size-18, mercury.size-18);
   
   fill (223,121,40);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-21, planet.mercury-21);
+  ellipse(mercury.x, mercury.y, mercury.size-21, mercury.size-21);
   
   fill (225,120,37);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-24, planet.mercury-24);
+  ellipse(mercury.x, mercury.y, mercury.size-24, mercury.size-24);
   
   fill (229,119,34);
   strokeWeight(0);
-  ellipse(planet.mercuryX, planet.mercuryY, planet.mercury-27, planet.mercury-27);
+  ellipse(mercury.x, mercury.y, mercury.size-27, mercury.size-27);
 
 //Venus
 
   fill (200,87,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-6,planet.venus-6);
+  ellipse(venus.x, venus.y, venus.size-6,venus.size-6);
   
   fill (206,90,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-12,planet.venus-12);
+  ellipse(venus.x, venus.y, venus.size-12,venus.size-12);
   
   fill (212,93,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-18,planet.venus-18);
+  ellipse(venus.x, venus.y, venus.size-18,venus.size-18);
   
   fill (218,96,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-24,planet.venus-24);
+  ellipse(venus.x, venus.y, venus.size-24,venus.size-24);
   
   fill (224,99,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-30,planet.venus-30);
+  ellipse(venus.x, venus.y, venus.size-30,venus.size-30);
   
   fill (230,102,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-36,planet.venus-36);
+  ellipse(venus.x, venus.y, venus.size-36,venus.size-36);
   
   fill (236,105,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-42,planet.venus-42);
+  ellipse(venus.x, venus.y, venus.size-42,venus.size-42);
   
   fill (242,106,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-48,planet.venus-48);
+  ellipse(venus.x, venus.y, venus.size-48,venus.size-48);
   
   fill (248,107,0);
   strokeWeight(0);
-  ellipse(planet.venusX, planet.venusY, planet.venus-54,planet.venus-54);
+  ellipse(venus.x, venus.y, venus.size-54,venus.size-54);
 
 //Earth
 
   fill (3,100,175);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-10,planet.earth-10);
+  ellipse(earth.x, earth.y, earth.size-10,earth.size-10);
   
   fill (3,104,183);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-20,planet.earth-20);
+  ellipse(earth.x, earth.y, earth.size-20,earth.size-20);
   
   fill (3,108,191);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-30,planet.earth-30);
+  ellipse(earth.x, earth.y, earth.size-30,earth.size-30);
   
   fill (3,113,199);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-40,planet.earth-40);
+  ellipse(earth.x, earth.y, earth.size-40,earth.size-40);
   
   fill (3,117,207);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-50,planet.earth-50);
+  ellipse(earth.x, earth.y, earth.size-50,earth.size-50);
   
   fill (3,121,215);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-60,planet.earth-60);
+  ellipse(earth.x, earth.y, earth.size-60,earth.size-60);
   
   fill (3,126,223);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-70,planet.earth-70);
+  ellipse(earth.x, earth.y, earth.size-70,earth.size-70);
   
   fill (3,130,231);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-80,planet.earth-80);
+  ellipse(earth.x, earth.y, earth.size-80,earth.size-80);
   
   fill (3,135,239);
   strokeWeight(0);
-  ellipse(planet.earthX, planet.earthY, planet.earth-90,planet.earth-90);
+  ellipse(earth.x, earth.y, earth.size-90,earth.size-90);
 
 //Mars
 
   fill(127,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-10, planet.mars-10);
+  ellipse(mars.x, mars.y, mars.size-10, mars.size-10);
   
   fill(138,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-20, planet.mars-20);
+  ellipse(mars.x, mars.y, mars.size-20, mars.size-20);
   
   fill(149,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-30, planet.mars-30);
+  ellipse(mars.x, mars.y, mars.size-30, mars.size-30);
   
   fill(160,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-40, planet.mars-40);
+  ellipse(mars.x, mars.y, mars.size-40, mars.size-40);
   
   fill(171,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-50, planet.mars-50);
+  ellipse(mars.x, mars.y, mars.size-50, mars.size-50);
   
   fill(182,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-60, planet.mars-60);
+  ellipse(mars.x, mars.y, mars.size-60, mars.size-60);
   
   fill(193,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-70, planet.mars-70);
+  ellipse(mars.x, mars.y, mars.size-70, mars.size-70);
   
   fill(204,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-80, planet.mars-80);
+  ellipse(mars.x, mars.y, mars.size-80, mars.size-80);
   
   fill(215,0,0);
   strokeWeight(0);
-  ellipse(planet.marsX, planet.marsY, planet.mars-90, planet.mars-90);
+  ellipse(mars.x, mars.y, mars.size-90, mars.size-90);
 
-//Sun Text
+//Sun Hover Text
 
 if (mouseX < 700 && mouseY < 550 && mouseX && mouseX > 500 && mouseY > 350 ){
   textSize(45);
