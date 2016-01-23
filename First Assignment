@@ -1,17 +1,27 @@
+
+
 function setup() {
   
   //background
   createCanvas(500,500);
-  background(51);
+  
   
 }
 
-function draw() {
-  //general stuff:
+function draw() { //general stuff:
+  background(20);
+  
+  display();
+  moveCursor();
+  
+
+  
+  
+
+function display()  { //basic image:
+
   var midWidth = width/2;
   var midLength = height/2;
-  
-  //basic image
   
   //black parts
   fill(51);
@@ -51,6 +61,7 @@ function draw() {
   textAlign(RIGHT);
   text("FUNNY",midWidth + 30,midLength - 200,100,100);
   
+  
   fill('rgb(0,90,0)');
   textSize(55);
   textAlign(CENTER);
@@ -60,10 +71,33 @@ function draw() {
   textSize(65);
   textAlign(LEFT);
   text("CAT",midWidth - 10, midLength + 190, 100,100);
+}
   
   //interactive areas:
-  fill(250,200,200);
-  ellipse(mouseX,mouseY,100,100);
+function moveCursor() {
+
+  if(mouseY<500){
+    fill('orange');
+    ellipse(mouseX,mouseY,200,200);
+  }
   
+  if(mouseY<400){
+    fill('pink');
+    ellipse(mouseX,mouseY,200,200);
+  }
+  if(mouseY<300){
+    fill('blue');
+    ellipse(mouseX,mouseY,200,200);
+  }
+  if(mouseY<200){
+    fill('pink');
+    ellipse(mouseX,mouseY,200,200);
+  }  
+  if(mouseY<100){
+    fill('blue');
+    ellipse(mouseX,mouseY,200,200);
+  }
+  }
+
   
-}
+}  
