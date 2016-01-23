@@ -1,3 +1,5 @@
+//Planet Variables
+
 var sun = {
   name: "Sun",
   size: 300,
@@ -6,7 +8,7 @@ var sun = {
   colorR: 222,
   colorG: 192,
   colorB: 0
-}
+};
 
 var mercury = {
   name: "Mercury",
@@ -16,7 +18,7 @@ var mercury = {
   colorR: 210,
   colorG: 128,
   colorB: 64
-}
+};
 
 var venus = {
   name: "Venus",
@@ -26,7 +28,7 @@ var venus = {
   colorR: 200,
   colorG: 87,
   colorB: 0
-}
+};
 
 var earth = {
   name: "Earth",
@@ -36,7 +38,7 @@ var earth = {
   colorR: 3,
   colorG: 100,
   colorB: 175
-}
+};
 
 var mars = {
   name: "Mars",
@@ -54,8 +56,9 @@ function setup() {
 
 function draw() {
 background(30,30,30);
+
 //Mercury Hover Orbit
-if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.size){
+if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   textSize(25);
   fill(255,255,255);
   text("Mercury", 778, 460);
@@ -71,7 +74,7 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
   ellipse(600,450,348,348);
   
 //Venus Hover Orbit
-} else if (dist(mouseX, venus.x) < venus.size && dist(mouseY, venus.y) < venus.size){
+} else if (dist(mouseX, mouseY, venus.x, venus.y) < venus.size - 24){
   textSize(25);
   fill(255,255,255);
   text("Venus", 820, 300);
@@ -87,7 +90,7 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
   ellipse(600,450,485,485);
   
 //Earth Hover Orbit
-}else if (mouseX < 415 && mouseY < 315 && mouseX && mouseX > 335 && mouseY > 235){
+} else if (dist(mouseX, mouseY, earth.x, earth.y) < earth.size - 40){
   textSize(25);
   fill(255,255,255);
   text("Earth", 260, 270);
@@ -103,7 +106,7 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
   ellipse(600,450,580,580);
   
 // Mars Hover Orbit
-}else if (mouseX < 940 && mouseY < 740 && mouseX && mouseX > 860 && mouseY > 660){
+} else if (dist(mouseX, mouseY, mars.x, mars.y) < mars.size - 40){
   textSize(25);
   fill(255,255,255);
   text("Mars", 945, 700);
@@ -119,7 +122,7 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
   ellipse(600,450,785,785);
   
 //When No Hover
-}else{
+} else{
   noFill();
   stroke(210,128,64);
   strokeWeight(1);
@@ -134,6 +137,8 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
   stroke(195, 81, 81);
   strokeWeight(4);
   ellipse(600,450,785,785);
+  
+//Title
   textSize(35);
   fill(255,255,255);
   noStroke();
@@ -332,7 +337,7 @@ if (dist(mouseX, mercury.x) < mercury.size && dist(mouseY, mercury.y) < mercury.
 
 //Sun Hover Text
 
-if (mouseX < 700 && mouseY < 550 && mouseX && mouseX > 500 && mouseY > 350 ){
+if (dist(mouseX, mouseY, sun.x, sun.y) < sun.size-160 ){
   textSize(45);
   fill(255,255,255);
   text("Sun", 560, 440);
