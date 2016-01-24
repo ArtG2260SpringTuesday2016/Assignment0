@@ -3,18 +3,24 @@ function setup() {
   background(10,200,50,80)
   
 }
-// sup  
+
+  
 function Window(x,y) {
   fill(250,250,250)
   ellipse(x,y,30,30)
   
 }
 
+
+
 function draw() {
+  var x = mouseX
+  var y = mouseY
+  
   //sky
     fill(100,230,400)
-    if (mouseX > 40 && mouseX < 120) {
-      if (mouseY > 40 && mouseY < 120) {
+    if (x > 40 && x < 120) {
+      if (y > 40 && y < 120) {
         fill (20,20,230);
       }
     }
@@ -42,3 +48,6 @@ function draw() {
     Window(360,230);
     Window(430,230);
   }
+
+for(var number=0; number<=12; number=number+2)
+console.log(number);
