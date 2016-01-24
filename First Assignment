@@ -1,45 +1,36 @@
-
+//1) 
+//adding functions, variables, and loops: 
 
 function setup() {
   
   //background
   createCanvas(500,500);
   
-  
 }
 
 function draw() { //general stuff:
   background(20);
+  var midWidth = width/2;
+  var midLength = height/2;
   
   display();
   moveCursor();
   
-
-  
-  
-
-function display()  { //basic image:
-
-  var midWidth = width/2;
-  var midLength = height/2;
-  
-  //black parts
+  //CALLS FROM THE drawEllipse FUNCTION:
   fill(51);
   ellipse(midWidth,midLength - 10,150,100);//head
-  ellipse(midWidth,midLength + 80,130,120);//body
- 
-  //white parts
+  ellipse(midWidth,midLength + 80,130,120);//body  
+
   strokeWeight(0);
   fill(255,255,255);
   ellipse(midWidth,midLength,100,70);//head
   ellipse(midWidth,midLength + 80,80,110);//body
   
-  //details
-  
-  //eyes:
   fill(51);
   ellipse(midWidth - 20,midLength,9,18);//left eye
   ellipse(midWidth + 20,midLength,9,18);//right eye
+  
+  //CALLS FROM THE drawArcs FUNCTION:
   
   //beak
   fill(255,204,0);
@@ -54,6 +45,41 @@ function display()  { //basic image:
   fill(255,204,0);
   arc(midWidth - 30,midLength + 150,midWidth - 200, midLength - 200,PI,0);//left foot
   arc(midWidth + 30,midLength + 150,midWidth - 200, midLength - 200,PI,0);//right foot
+  
+  
+
+function display()  { //actual image:
+  
+  function drawEllipse(x,y)  {
+  
+  //black parts:
+  ellipse(midWidth,midLength - y,150,100);//head
+  ellipse(midWidth,midLength + y,130,120);//body  
+ 
+  //white parts:
+  ellipse(midWidth,midLength,100,70);//head
+  ellipse(midWidth,midLength + y,80,110);//body
+  
+  //details
+  
+  //eyes:
+  ellipse(midWidth - x,midLength,9,18);//left eye
+  ellipse(midWidth + x,midLength,9,18);//right eye
+  }
+  
+  function drawArcs(x,y)  {
+  //beak
+  arc(midWidth,midLength + y,midWidth - x, midLength - y,0,PI);
+  
+  //wings
+  arc(midWidth - x,midLength + y,midWidth - x, midLength - y,2*PI/3,5*PI/3);//left wing
+  arc(midWidth + x,midLength + y,midWidth - x, midLength - y,4*PI/3,PI/3);//right wing
+  
+  //feet
+  arc(midWidth - x,midLength + y,midWidth - x, midLength - y,PI,0);//left foot
+  arc(midWidth + x,midLength + y,midWidth - x, midLength - y,PI,0);//right foot
+  }
+}
   
   //text
   fill(300,20,0);
@@ -70,34 +96,42 @@ function display()  { //basic image:
   fill(255,203,50);
   textSize(65);
   textAlign(LEFT);
-  text("CAT",midWidth - 10, midLength + 190, 100,100);
-}
+  text("CAT",midWidth - 10, midLength + 190, 100,100);  
+
   
   //interactive areas:
-function moveCursor() {
-
-  if(mouseY<500){
-    fill('orange');
-    ellipse(mouseX,mouseY,200,200);
+  
+  function moveCursor() {
+  
+    if(mouseY<500){
+      fill('orange');
+      ellipse(mouseX,mouseY,400,400);
+    }
+    if(mouseY<400){
+      fill('pink');
+      ellipse(mouseX,mouseY,400,400);
+    }
+    if(mouseY<300){
+      fill('red');
+      ellipse(mouseX,mouseY,400,400);
+    }
+    if(mouseY<200){
+      fill('magenta');
+      ellipse(mouseX,mouseY,400,400);
+    }  
+    if(mouseY<100){
+      fill('purple');
+      ellipse(mouseX,mouseY,400,400);
+    }
+    
+    var x = 0;
+    var y = midLength+ 150;
+    while(x<width && y<height) {
+      rect(x,y,5,5);
+      x=x + 10;
+    }
   }
   
-  if(mouseY<400){
-    fill('pink');
-    ellipse(mouseX,mouseY,200,200);
-  }
-  if(mouseY<300){
-    fill('blue');
-    ellipse(mouseX,mouseY,200,200);
-  }
-  if(mouseY<200){
-    fill('pink');
-    ellipse(mouseX,mouseY,200,200);
-  }  
-  if(mouseY<100){
-    fill('blue');
-    ellipse(mouseX,mouseY,200,200);
-  }
-  }
 
-  
 }  
+
