@@ -1,5 +1,7 @@
-var rectX = 0;
-var Y = 35;
+var rectangle = {
+  x: 0,
+  y: 35,
+}
 var isntChanged = true;
 
 function setup() {
@@ -8,22 +10,20 @@ function setup() {
 }
 
 function draw() {
-  //black circles
   ellipse(400,300,150,150)
   ellipse(80,60,130,130)
   
-  //moving circle along X axis
   fill(1);
   noStroke(255);
-  rect(rectX, mouseY, Y, Y, 20);
-  rectX = rectX + 1.5
-  if (rectX > 600){
-    rectX = 0;
+  rect(rectangle.x, mouseY, rectangle.y , rectangle.y , 20);
+  rectangle.x = rectangle.x + 2.5
+  if (rectangle.x > 600){
+    rectangle.x = 0;
   if (isntChanged) {background(200,0,155)
   }
   }}
 function mousePressed(){
   //new pink background
-  background(255,0,255);
+  background = (255,0,255);
   isntChanged = false;
 }
