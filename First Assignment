@@ -124,14 +124,14 @@ function display()  { //actual image:
       ellipse(mouseX,mouseY,400,400);
     }
     
-    var x = 0;
-    var y = midLength+ 150;
-    while(x<width && y<height) {
-      rect(x,y,5,5);
-      x=x + 10;
+    for (var x = 0; x<= width; x = x+ 50){
+      for (var y = 0; y<= height; y = y+ 50){
+        fill(random(255), 0, random(255));
+        ellipse(x,y,25,25);
+      }
+    
     }
   }
   
 
 }  
-
