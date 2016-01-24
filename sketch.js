@@ -58,6 +58,7 @@ function draw() {
 background(30,30,30);
 
 //Mercury Hover Orbit
+
 if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   textSize(25);
   fill(255,255,255);
@@ -74,6 +75,7 @@ if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   ellipse(600,450,348,348);
   
 //Venus Hover Orbit
+
 } else if (dist(mouseX, mouseY, venus.x, venus.y) < venus.size - 24){
   textSize(25);
   fill(255,255,255);
@@ -90,6 +92,7 @@ if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   ellipse(600,450,485,485);
   
 //Earth Hover Orbit
+
 } else if (dist(mouseX, mouseY, earth.x, earth.y) < earth.size - 40){
   textSize(25);
   fill(255,255,255);
@@ -106,6 +109,7 @@ if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   ellipse(600,450,580,580);
   
 // Mars Hover Orbit
+
 } else if (dist(mouseX, mouseY, mars.x, mars.y) < mars.size - 40){
   textSize(25);
   fill(255,255,255);
@@ -122,6 +126,7 @@ if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   ellipse(600,450,785,785);
   
 //When No Hover
+
 } else{
   noFill();
   stroke(210,128,64);
@@ -139,6 +144,7 @@ if (dist(mouseX, mouseY, mercury.x, mercury.y) < mercury.size - 12){
   ellipse(600,450,785,785);
   
 //Title
+
   textSize(35);
   fill(255,255,255);
   noStroke();
