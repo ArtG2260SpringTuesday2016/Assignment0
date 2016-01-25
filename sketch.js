@@ -1,5 +1,13 @@
-var bubble = 25;
+var goFish = function(aNumber) {
+  var result;
+  for (var i = 0; i<=10; i++){
+    if (i != 5) console.log(i+" Go fish!");
+    else if (i = 5) console.log(i+" Here you go!")
+  }
+  console.log(result);
+};
 
+var bubble = 25;
 
 function setup() {
   createCanvas(500,500);
