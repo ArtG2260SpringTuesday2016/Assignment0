@@ -1,12 +1,3 @@
-var goFish = function(aNumber) {
-  var result;
-  for (var i = 0; i<=10; i++){
-    if (i != 5) {console.log(i+" Go fish!");}
-    else if (i === 5) {console.log(i+" Here you go!")}
-  }
-  console.log(result);
-};
-
 var bubble = 25;
 
 function setup() {
@@ -18,12 +9,20 @@ function draw() {
   
   fill(255,255,255);
   strokeWeight(1);
- ellipse(120,275,bubble,bubble);
- ellipse(70,100,bubble-8,bubble-8);
- ellipse(80,20,bubble-12,bubble-12);
- ellipse(400,250,bubble-7,bubble-7);
- ellipse(430,160,bubble-10,bubble-10);
- ellipse(405,25,bubble-17,bubble-17);
+  
+var makeBubbles = function(){
+var numBubbles = 20;
+ var bubbleSize = bubble - random(8,17);
+for (var i = 1; i < numBubbles / 2; i++) {
+ 
+  ellipse((i * random(0, 500)), (i * random(0, 500)), bubbleSize, bubbleSize)
+}
+for (var i = 1; i < numBubbles / 2; i++) {
+  ellipse((i * random(0, 500)), (i * random(0, 500)),bubbleSize, bubbleSize)
+}
+}
+makeBubbles();
+
  
  //fish
  strokeWeight(0)
@@ -32,7 +31,7 @@ function draw() {
  //top fin
  triangle(mouseX-50,mouseY-90,mouseX+35,mouseY,mouseX-20,mouseY)
  //bottom fins
- triangle(mouseX,mouseY+20,mouseX+50,mouseY,mouseX-20,mouseY+70)
+ triangle(mouseX,mouseY+20,mouseX+45,mouseY,mouseX-20,mouseY+70)
  triangle(mouseX-20,mouseY+20,mouseX+30,mouseY,mouseX-40,mouseY+70)
  //tail
  triangle(mouseX-60,mouseY-50,mouseX-60,mouseY+50,mouseX,mouseY)
@@ -40,12 +39,7 @@ function draw() {
  fill(0)
  ellipse(mouseX+20,mouseY-10,10,10)
  
- fill(255,255,255)
- strokeWeight(1)
- ellipse(100,200,bubble-5,bubble-5);
- ellipse(150,430,bubble-2,bubble-2);
- ellipse(375,470,bubble,bubble);
- ellipse(380,80,bubble-15,bubble-15);
- ellipse(420,350,bubble+6,bubble+6);
- ellipse(90,355,bubble+5,bubble+5);
+  fill(255,255,255);
+  strokeWeight(1);
+makeBubbles();
 }
